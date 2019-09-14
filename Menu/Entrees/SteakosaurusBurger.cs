@@ -4,24 +4,23 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Class to represent Seakosaurus Burger menu item
+    /// </summary>
     public class SteakosaurusBurger
     {
-        //Implement a class to represent the Steakosaurus Burger entree.
-        //Its price is **$5.15**, it contains**621 calories**, and 
-        //its ingredients are: **whole wheat bun, steakburger pattie, pickle, ketchup**, and **mustard.** ]
-        //It should implement methods for holding the **bun, pickle, ketchup,** and** mustard**.
-
+        /// <summary>
+        /// Bools to represent if ingredients are included or not in objects of this class
+        /// </summary>
         private bool bun = true;
-
         private bool pickle = true;
-
         private bool ketchup = true;
-
         private bool mustard = true;
-
+        /// <summary>
+        /// Price, Calorie and Ingredients properties for objects of this class
+        /// </summary>
         public double Price { get; set; }
         public uint Calories { get; set; }
-
         public List<string> Ingredients
         {
             get
@@ -34,28 +33,29 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Constructor for this class. 
+        /// </summary>
         public SteakosaurusBurger()
         {
             this.Price = 5.15;
             this.Calories = 621;
         }
-
+        /// <summary>
+        /// Methods do withold certain ingredients from Ingredients property
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
-
         public void HoldPickle()
         {
             this.pickle = false;
         }
-
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
-
         public void HoldMustard()
         {
             this.mustard = false;

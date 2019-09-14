@@ -4,20 +4,20 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Class to represent Dino Nuggets menu item
+    /// </summary>
     public class DinoNuggets
     {
-
-        //Implement a class to represent the Dino Nuggest entree.Its price is **$4.25**, 
-        // it contains**59 calories** per nugget, and its ingredients are: **6** **chicken nuggets**.  
-        //It should implement methods for adding a nugget at an additional **$0.25**.
-
-        
+        /// <summary>
+        /// Bools to represent if ingredients are included or not in objects of this class
+        /// </summary>
         private int extraNuggz = 0;
-
+        /// <summary>
+        /// Price, Calorie and Ingredients properties for objects of this class
+        /// </summary>
         public double Price { get; set; }
-
         public uint Calories { get; set; }
-
         public List<string> Ingredients
         {
             get
@@ -30,13 +30,17 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-        
+        /// <summary>
+        /// Constructor for this class. 
+        /// </summary>
         public DinoNuggets()
         {
             this.Price = 4.25;
             this.Calories = 59 * 6;
         }
-
+        /// <summary>
+        /// Method to add nuggets to order
+        /// </summary>
         public void AddNugget()
         {
             this.Price += .25;

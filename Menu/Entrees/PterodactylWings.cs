@@ -4,17 +4,16 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Class to represent Pterodactyl Wings menu item
+    /// </summary>
     public class PterodactylWings
     {
-        //Implement a class to represent the Pterodactyl Wings entree.
-        //Its price is **$7.21**, it contains**318 calories**, 
-        //and its ingredients are:  **Chicken** and **Wing Sauce**.
-
-
+        /// <summary>
+        /// Price, Calorie and Ingredients properties for objects of this class
+        /// </summary>
         public double Price { get; set; }
-
         public uint Calories { get; set; }
-
         public List<string> Ingredients
         {
             get
@@ -23,7 +22,9 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Constructor for this class. 
+        /// </summary>
         public PterodactylWings()
         {
             this.Price = 7.21;

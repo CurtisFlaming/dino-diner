@@ -4,35 +4,27 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Class to represent TRex King Burger menu item
+    /// </summary>
     public class TRexKingBurger
     {
-
-        //Implement a class to represent the T-Rex King Burger entree.
-        //Its price is **$8.45**, it contains **728 calories**, and 
-        //its ingredients are: a** whole wheat bun, three steakburger patties, lettuce, tomato, onion, pickle, ketchup, mustard**, and** mayo**.  
-        //It should implement methods for holding the **bun, lettuce, tomato, onion, pickle, ketchup, mustard**, and** mayo.**
-
-
+        /// <summary>
+        /// Bools to represent if ingredients are included or not in objects of this class
+        /// </summary>
         private bool bun = true;
-
         private bool lettuce = true;
-
         private bool tomato = true;
-
         private bool onion = true;
-
         private bool pickle = true;
-
         private bool ketchup = true;
-
         private bool mustard = true;
-
         private bool mayo = true;
-
+        /// <summary>
+        /// Price, Calorie and Ingredients properties for objects of this class
+        /// </summary>
         public double Price { get; set; }
-
         public uint Calories { get; set; }
-
         public List<string> Ingredients
         {
             get
@@ -49,48 +41,45 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Constructor for this class. 
+        /// </summary>
         public TRexKingBurger()
         {
             this.Price = 8.45;
             this.Calories = 728;
         }
-
+        /// <summary>
+        /// Methods do withold certain ingredients from Ingredients property
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
-
         public void HoldLettuce()
         {
             this.lettuce = false;
         }
-
         public void HoldTomato()
         {
             this.tomato = false;
         }
-
         public void HoldOnion()
         {
             this.onion = false;
         }
-
         public void HoldPickle()
         {
             this.pickle = false;
         }
-
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
-
         public void HoldMustard()
         {
             this.mustard = false;
         }
-
         public void HoldMayo()
         {
             this.mayo = false;

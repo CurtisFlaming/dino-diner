@@ -12,8 +12,7 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Potatoe", "Salt", "Vegetable" };
-
+                List<string> ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
                 return ingredients;
             }
         }
@@ -28,12 +27,12 @@ namespace DinoDiner.Menu.Sides
             }
             set
             {
-                Size = value;
+                size = value;
                 switch (size)
                 {
                     case Size.Large:
                         Price = 1.95;
-                        Calories = 490;
+                        Calories = 480;
                         break;
                     case Size.Medium:
                         Price = 1.45;
@@ -43,8 +42,8 @@ namespace DinoDiner.Menu.Sides
                         Price = .99;
                         Calories = 222;
                         break;
-
                 }
+                
             }
         } 
 

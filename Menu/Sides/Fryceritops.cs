@@ -4,10 +4,15 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// Class to represent Fryceritops side order
+    /// </summary>
     public class Fryceritops : Side
     {
 
-
+        /// <summary>
+        /// List to store ingredients of this object
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -17,7 +22,9 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
-
+        /// <summary>
+        /// Size of side. Sets price and calories
+        /// </summary>
         private Size size;
         public override Size Size
         {
@@ -49,9 +56,7 @@ namespace DinoDiner.Menu.Sides
 
         public Fryceritops()
         {
-            this.Price = 0.99;
-            this.Calories = 222;
-            //this.Ingredients = new List<string>() { "Potatoe", "Salt", "Vegetable" };
+            this.Size = Size.Small;
         }
 
 

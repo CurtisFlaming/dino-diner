@@ -5,9 +5,9 @@ using System.Text;
 namespace DinoDiner.Menu.Sides
 {
     /// <summary>
-    /// Class to represent Triceritots
+    /// class to represent Mezzorella Sticks
     /// </summary>
-    public class Triceritots : Side
+    public class MezzorellaSticks : Side
     {
         /// <summary>
         /// List to store ingredients of this object
@@ -16,13 +16,13 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil"};
+                List<string> ingredients = new List<string>() { "Breading", "Cheese Product", "Vegetable Oil"};
                 return ingredients;
             }
         }
 
         /// <summary>
-        /// size of side order
+        /// Size of side order
         /// </summary>
         private Size size;
         public override Size Size
@@ -38,22 +38,22 @@ namespace DinoDiner.Menu.Sides
                 {
                     case Size.Large:
                         Price = 1.95;
-                        Calories = 590;
+                        Calories = 720;
                         break;
                     case Size.Medium:
                         Price = 1.45;
-                        Calories = 410;
+                        Calories = 610;
                         break;
                     case Size.Small:
                         Price = .99;
-                        Calories = 352;
+                        Calories = 540;
                         break;
                 }
 
             }
         }
 
-        public Triceritots()
+        public MezzorellaSticks()
         {
             this.Size = Size.Small;
         }

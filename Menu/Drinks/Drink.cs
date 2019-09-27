@@ -11,5 +11,6 @@ namespace DinoDiner.Menu.Drinks
 
         public abstract Size Size { get; set; }
 
+        public List<string> Ingredients;
     }
 }

@@ -11,7 +11,7 @@ namespace MenuTest
         [Fact]
         public void ComboMustBeSuppliedAnEntree()
         {
-            CretaceousCombo combo = new CretaceousCombo();
+            //CretaceousCombo combo = new CretaceousCombo();
         }
     }
 }

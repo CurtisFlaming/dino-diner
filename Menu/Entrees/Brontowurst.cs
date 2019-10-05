@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Author: Curtis Flaming
+ * Class: Brontowurst
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class to represent Brontowurst menu item

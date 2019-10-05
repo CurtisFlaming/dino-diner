@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Author: Curtis Flaming
+ * Class: Triceritots
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class to represent Triceritots

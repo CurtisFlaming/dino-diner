@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Author: Curtis Flaming
+ * Class: Tyrannotea
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// class to represent tea drink
@@ -12,7 +15,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// tea has sugar or not
         /// </summary>
-        private bool Sweet = false;
+        public bool Sweet = false;
         /// <summary>
         /// tea has lemon or not
         /// </summary>
@@ -94,6 +97,24 @@ namespace DinoDiner.Menu.Drinks
             Sweet = false;
             sweetFactor = 1;
         }
-
+        /// <summary>
+        /// to string
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            string name = "";
+            string[] tempArray = SplitCamelCase(this.GetType().Name);
+            foreach (string s in tempArray)
+            {
+                name += s + " ";
+            }
+            name = name.Substring(0, name.Length - 1);
+            if (Sweet)
+            {
+                return ($"{Size} Sweet {name}");
+            }
+            return ($"{Size} {name}");
+        }
     }
 }

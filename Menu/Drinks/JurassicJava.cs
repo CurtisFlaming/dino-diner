@@ -1,13 +1,16 @@
-﻿using System;
+﻿/* Author: Curtis Flaming
+ * Class: JurassicJava
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// class to represent coffee drink
     /// </summary>
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink
     {
         /// <summary>
         /// coffee has room for cream or now
@@ -20,7 +23,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// constructor sets default size to small and ice to false
         /// </summary>
-        public JurrasicJava()
+        public JurassicJava()
         {
             this.Ice = false;
             this.Size = Size.Small;
@@ -78,6 +81,25 @@ namespace DinoDiner.Menu.Drinks
         public void AddIce()
         {
             Ice = true;
+        }
+        /// <summary>
+        /// to string
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            string name = "";
+            string[] tempArray = SplitCamelCase(this.GetType().Name);
+            foreach (string s in tempArray)
+            {
+                name += s + " ";
+            }
+            name = name.Substring(0, name.Length - 1);
+            if (Decaf)
+            {
+                return ($"{Size} Decaf {name}");
+            }
+            return ($"{Size} {name}");
         }
     }
 }

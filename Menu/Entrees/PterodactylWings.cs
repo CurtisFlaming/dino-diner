@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Author: Curtis Flaming
+ * Class: PterodactylWings
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class to represent Pterodactyl Wings menu item

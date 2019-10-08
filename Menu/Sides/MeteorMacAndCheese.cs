@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Author: Curtis Flaming
+ * Class: MeteorMacAndCheese
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Meteor mac and cheese side order
@@ -56,6 +59,14 @@ namespace DinoDiner.Menu.Sides
         public MeteorMacAndCheese()
         {
             this.Size = Size.Small;
+        }
+        /// <summary>
+        /// to string
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            return $"{Size} Meteor Mac and Cheese";
         }
 
     }

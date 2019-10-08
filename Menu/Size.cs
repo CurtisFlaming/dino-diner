@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Author: Curtis Flaming
+ * Class: Size
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

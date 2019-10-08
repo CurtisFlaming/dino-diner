@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Author: Curtis Flaming
+ * Class: DinoNuggets
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class to represent Dino Nuggets menu item
@@ -45,6 +48,14 @@ namespace DinoDiner.Menu.Entrees
             this.Price += .25;
             this.Calories += 59;
             extraNuggz ++;
+        }
+        /// <summary>
+        /// to string
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
     }
 }

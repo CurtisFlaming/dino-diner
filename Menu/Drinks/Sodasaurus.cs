@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Author: Curtis Flaming
+ * Class: Sodasaurus
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// class to represent soda
@@ -58,6 +61,21 @@ namespace DinoDiner.Menu.Drinks
         public Sodasaurus()
         {
             Size = Size.Small;
+        }
+        /// <summary>
+        /// to string
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            string name = "";
+            string[] tempArray = SplitCamelCase(this.GetType().Name);
+            foreach (string s in tempArray)
+            {
+                name += s + " ";
+            }
+            name = name.Substring(0, name.Length - 1);
+            return ($"{Size} {Flavor} {name}");
         }
     }
 }

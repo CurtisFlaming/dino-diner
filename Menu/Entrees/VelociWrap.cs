@@ -1,9 +1,11 @@
-﻿
+﻿/* Author: Curtis Flaming
+ * Class: VelociWrap
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class to represent VelociWrap menu item
@@ -45,7 +47,7 @@ namespace DinoDiner.Menu.Entrees
             this.Calories = 356;
         }
         /// <summary>
-        /// Methods do withold certain ingredients from Ingredients property
+        /// Methods to withold certain ingredients from Ingredients property
         /// </summary>
         public void HoldDressing()
         {
@@ -58,6 +60,14 @@ namespace DinoDiner.Menu.Entrees
         public void HoldCheese()
         {
             this.cheese = false;
+        }
+        /// <summary>
+        /// to string
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            return "Veloci-Wrap";
         }
     }
 }

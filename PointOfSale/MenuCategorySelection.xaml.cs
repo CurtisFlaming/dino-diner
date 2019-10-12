@@ -30,6 +30,19 @@ namespace PointOfSale
             NavigationService.Navigate(new ComboSelection());
         }
 
+        private void DrinksClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DrinkSelection());
+        }
 
+        private void EntreesClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EntreeSelection());
+        }
+
+        private void SidesClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SideSelection());
+        }
     }
 }

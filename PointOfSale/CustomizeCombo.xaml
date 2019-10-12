@@ -9,6 +9,28 @@
       Title="CustomizeCombo">
 
     <Grid>
-        
+
+
+
+
+       
+
+
+        <RadioButton Content="Large" HorizontalAlignment="Left" Margin="247,257,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.007,-0.2" Height="100"/>
+        <RadioButton Content="Medium" HorizontalAlignment="Left" Margin="351,257,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.007,-0.2" Height="100"/>
+        <RadioButton Content="Small" HorizontalAlignment="Left" Margin="455,257,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.007,-0.2" Height="100"/>
+        <Label Content="Size" HorizontalAlignment="Left" Margin="382,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.026,0.654"/>
+        <Button HorizontalAlignment="Left" Margin="455,60,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="DrinksClick">
+            <DockPanel Height="100" VerticalAlignment="Top">
+                <TextBlock>Drink</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="247,60,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="SidesClick">
+            <DockPanel Height="100" VerticalAlignment="Top">
+                <TextBlock>Side</TextBlock>
+            </DockPanel>
+        </Button>
+
+
     </Grid>
 </Page>

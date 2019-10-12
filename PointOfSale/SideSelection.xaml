@@ -9,6 +9,45 @@
       Title="SideSelection">
 
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Left" Height="440" Margin="84,0,0,0" VerticalAlignment="Top" Width="138">
+            <TextBlock HorizontalAlignment="Center">
+                Side
+            </TextBlock>
+            <Button Height="100" Width="120">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-08.png"/>
+                </Button.Background>
+                <DockPanel Height="100" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Bottom">Fryceritops</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button Height="100" Width="120" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-09.png"/>
+                </Button.Background>
+                <DockPanel Height="100" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Bottom">Meteor Mac&amp;Cheese</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button Height="100" Width="120" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-10.png"/>
+                </Button.Background>
+                <DockPanel Height="100" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Bottom">Mezzorella Sticks</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button Height="100" Width="120" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-11.png"/>
+                </Button.Background>
+                <DockPanel Height="100" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Bottom">Triceritots</TextBlock>
+                </DockPanel>
+            </Button>
+        </StackPanel>
+        <RadioButton Content="Small" HorizontalAlignment="Left" Margin="295,108,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Medium" HorizontalAlignment="Left" Margin="295,157,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Large" HorizontalAlignment="Left" Margin="295,209,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

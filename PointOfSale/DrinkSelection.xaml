@@ -9,6 +9,54 @@
       Title="DrinkSelection">
 
     <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="420" Margin="84,10,0,0" VerticalAlignment="Top" Width="138">
+            <TextBlock HorizontalAlignment="Center">
+                Drink
+            </TextBlock>
+            <Button Height="100" Width="100" Click="SodasaurusClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-14.png"/>
+                </Button.Background>
+                <DockPanel Height="100" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Bottom">Sodasaurus</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button Height="100" Width="100" Click="TyrannoTeaClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-12.png"/>
+                </Button.Background>
+                <DockPanel Height="100" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Bottom">Tyranotea</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button Height="100" Width="100" Click="JurassicJavaClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-13.png"/>
+                </Button.Background>
+                <DockPanel Height="100" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Bottom">Jurassic Java</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button Height="100" Width="100" Click="WaterClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-15.png"/>
+                </Button.Background>
+                <DockPanel Height="100" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Bottom">Water</TextBlock>
+                </DockPanel>
+            </Button>
+        </StackPanel>
         
+        <StackPanel Name="SpecialStack" HorizontalAlignment="Left" Height="420" Margin="222,10,0,0" VerticalAlignment="Top" Width="138">
+            <TextBlock HorizontalAlignment="Center"><Run Text="Special"/></TextBlock>
+           
+        </StackPanel>
+        <RadioButton Content="Small" HorizontalAlignment="Left" Margin="433,53,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Medium" HorizontalAlignment="Left" Margin="433,117,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Large" HorizontalAlignment="Left" Margin="433,183,0,0" VerticalAlignment="Top"/>
+
+
+
+
     </Grid>
 </Page>

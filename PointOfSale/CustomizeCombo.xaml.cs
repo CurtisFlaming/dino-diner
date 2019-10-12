@@ -24,5 +24,15 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        private void SidesClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SideSelection());
+        }
+
+        private void DrinksClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DrinkSelection());
+        }
     }
 }

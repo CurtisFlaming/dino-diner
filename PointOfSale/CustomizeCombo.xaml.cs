@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* Author: Curtis Flaming
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,12 +26,20 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// send user to SideSelection page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SidesClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SideSelection());
         }
-
+        /// <summary>
+        /// send user to DrinkSelection page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DrinksClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new DrinkSelection());

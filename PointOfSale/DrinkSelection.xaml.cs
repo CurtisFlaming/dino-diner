@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* Author: Curtis Flaming
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,12 +26,17 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// clear flavor displays to they don't keep adding up
+        /// </summary>
         private void ClearSpecialStack()
         {
             SpecialStack.Children.RemoveRange(1, SpecialStack.Children.Count - 1);
         }
-
+        /// <summary>
+        /// create generic button
+        /// </summary>
+        /// <returns></returns>
         private Button AddSpecialStackButton()
         {
             Button button = new Button();
@@ -37,7 +44,11 @@ namespace PointOfSale
             button.Width = 100;
             return button;
         }
-
+        /// <summary>
+        /// handles sodasaurus click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SodasaurusClick(object sender, RoutedEventArgs e)
         {
             ClearSpecialStack();
@@ -49,10 +60,20 @@ namespace PointOfSale
             SpecialStack.Children.Add(icebutton);
             flavbutton.Click += ChooseFlavor;
         }
+        /// <summary>
+        /// send user to SodaFlavorSelection page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
          private void ChooseFlavor(Object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SodaFlavorSelection());
         }
+        /// <summary>
+        /// handles tyranno tea click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TyrannoTeaClick(object sender, RoutedEventArgs e)
         {
             ClearSpecialStack();
@@ -63,7 +84,11 @@ namespace PointOfSale
             SpecialStack.Children.Add(icebutton);
             SpecialStack.Children.Add(lemonbutton);
         }
-
+        /// <summary>
+        /// handles jurassic java click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void JurassicJavaClick(object sender, RoutedEventArgs e)
         {
             ClearSpecialStack();
@@ -81,7 +106,11 @@ namespace PointOfSale
             SpecialStack.Children.Add(creambutton);
 
         }
-
+        /// <summary>
+        /// handles water click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WaterClick(object sender, RoutedEventArgs e)
         {
             ClearSpecialStack();

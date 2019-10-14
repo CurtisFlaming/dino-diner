@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* Author: Curtis Flaming
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +26,11 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// send user to CustomizeCombo page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboSelectedClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new CustomizeCombo());

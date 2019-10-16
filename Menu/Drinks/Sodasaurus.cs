@@ -77,5 +77,25 @@ namespace DinoDiner.Menu
             name = name.Substring(0, name.Length - 1);
             return ($"{Size} {Flavor} {name}");
         }
+        /// <summary>
+        /// description of item
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
+        }
     }
 }

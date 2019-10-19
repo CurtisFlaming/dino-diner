@@ -98,5 +98,24 @@ namespace DinoDiner.Menu
         {
             return $"{Entree.ToString()} Combo";
         }
+
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        //public string[] Special
+        //{
+        //    get
+        //    {
+        //        List<string> ingredients = new List<string>();
+        //        ingredients.Add(Entree.Special);
+        //        ingredients.Add(Side.ToString());
+        //        ingredients.AddRange(Side.Special);
+        //        ingredients.Add(Drink.ToString());
+        //        ingredients.Add(Drink.Special);
+        //        return ingredients.ToArray();
+        //    }
+        //}
     }
 }

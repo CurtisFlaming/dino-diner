@@ -1,5 +1,5 @@
 ﻿/* Author: Curtis Flaming
- * Class: SodasaurusFlavor
+ * Class: SodasourusFlavor
  */
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Text;
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// enum for sodasaurus flavors
+    /// enum for Sodasourus flavors
     /// </summary>
     public enum SodasaurusFlavor
     {

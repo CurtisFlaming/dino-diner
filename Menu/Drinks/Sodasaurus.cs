@@ -1,5 +1,5 @@
 ﻿/* Author: Curtis Flaming
- * Class: Sodasaurus
+ * Class: Sodasourus
  */
 using System;
 using System.Collections.Generic;
@@ -8,16 +8,16 @@ using System.Text;
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// class to represent soda
+    /// class to represent tea
     /// </summary>
     public class Sodasaurus : Drink
     {
         /// <summary>
-        /// flavor of soda
+        /// flavor of tea
         /// </summary>
         public SodasaurusFlavor Flavor { get; set; }
         /// <summary>
-        /// size of soda
+        /// size of tea
         /// </summary>
         private Size size;
         public override Size Size {
@@ -33,20 +33,23 @@ namespace DinoDiner.Menu
                     case (Size.Small):
                         this.Price = 1.50;
                         this.Calories = 112;
+                        NotifyChanges();
                         break;
                     case (Size.Medium):
                         this.Price = 2.00;
                         this.Calories = 156;
+                        NotifyChanges();
                         break;
                     case (Size.Large):
                         this.Price = 2.50;
                         this.Calories = 208;
+                        NotifyChanges();
                         break;
                 }
             }
         }
         /// <summary>
-        /// soda ingredients
+        /// tea ingredients
         /// </summary>
         public override List<string> Ingredients
         {
@@ -68,27 +71,12 @@ namespace DinoDiner.Menu
         /// <returns>string</returns>
         public override string ToString()
         {
-            string name = "";
-            string[] tempArray = SplitCamelCase(this.GetType().Name);
-            foreach (string s in tempArray)
-            {
-                name += s + " ";
-            }
-            name = name.Substring(0, name.Length - 1);
-            return ($"{Size} {Flavor} {name}");
+            return Size + " " + Flavor + " Sodasaurus";
         }
         /// <summary>
-        /// description of item
+        /// item special attributes
         /// </summary>
-        public string Description
-        {
-            get
-            {
-                return this.ToString();
-            }
-        }
-
-        public string[] Special
+        public override string[] Special
         {
             get
             {

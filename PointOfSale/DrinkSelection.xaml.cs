@@ -45,11 +45,11 @@ namespace PointOfSale
             return button;
         }
         /// <summary>
-        /// handles sodasaurus click event
+        /// handles Sodasourus click event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SodasaurusClick(object sender, RoutedEventArgs e)
+        private void SodasourusClick(object sender, RoutedEventArgs e)
         {
             ClearSpecialStack();
             Button flavbutton = AddSpecialStackButton();
@@ -61,13 +61,13 @@ namespace PointOfSale
             flavbutton.Click += ChooseFlavor;
         }
         /// <summary>
-        /// send user to SodaFlavorSelection page
+        /// send user to teaFlavorSelection page
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
          private void ChooseFlavor(Object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SodaFlavorSelection());
+            NavigationService.Navigate(new teaFlavorSelection());
         }
         /// <summary>
         /// handles tyranno tea click

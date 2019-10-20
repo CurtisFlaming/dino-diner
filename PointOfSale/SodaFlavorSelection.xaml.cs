@@ -18,11 +18,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for SodaFlavorSelection.xaml
+    /// Interaction logic for teaFlavorSelection.xaml
     /// </summary>
-    public partial class SodaFlavorSelection : Page
+    public partial class teaFlavorSelection : Page
     {
-        public SodaFlavorSelection()
+        public teaFlavorSelection()
         {
             InitializeComponent();
         }

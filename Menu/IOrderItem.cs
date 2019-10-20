@@ -4,7 +4,19 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    interface IOrderItem
+    public interface IOrderItem
     {
+        /// <summary>
+        /// Item price
+        /// </summary>
+        double Price { get; }
+        /// <summary>
+        /// Item description
+        /// </summary>
+        string Description { get; }
+        /// <summary>
+        /// Item special description
+        /// </summary>
+        string[] Special { get; }
     }
 }

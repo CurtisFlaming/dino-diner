@@ -29,7 +29,5 @@ namespace DinoDiner.Menu
         /// </summary>
         /// <returns></returns>
         string ToString();
-        
-
     }
 }

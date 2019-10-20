@@ -13,12 +13,12 @@
             <TextBlock HorizontalAlignment="Center">
                 Drink
             </TextBlock>
-            <Button Height="100" Width="100" Click="SodasaurusClick">
+            <Button Height="100" Width="100" Click="SodasourusClick">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-14.png"/>
                 </Button.Background>
                 <DockPanel Height="100" VerticalAlignment="Center">
-                    <TextBlock VerticalAlignment="Bottom">Sodasaurus</TextBlock>
+                    <TextBlock VerticalAlignment="Bottom">Sodasourus</TextBlock>
                 </DockPanel>
             </Button>
             <Button Height="100" Width="100" Click="TyrannoTeaClick">

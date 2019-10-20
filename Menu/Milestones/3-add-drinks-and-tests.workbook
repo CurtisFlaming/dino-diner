@@ -12,7 +12,7 @@ platforms:
 
 DinoDiner currently offers four drinks:
 
-* Sodasaurus (old-fashioned sodas)
+* Sodasourus (old-fashioned teas)
 
 * Tyrannotea (iced tea)
 
@@ -32,11 +32,11 @@ Each drink should be declared in the **DinoDiner.Menu** namespace.
 ### Drink Base Class (10 points)
 Implement an abstract base class to represent any drink.  It should contain properties for: **Price** (a double), **Calories** (an uint), **Ingredients** (a List&lt;string&gt;), **Size**  (using a Size enum, default small), and **Ice** (bool, default true). It should also implement a method **HoldIce()** which sets the **Ice** property to false.
 
-### SodasaurusFlavor enum (10 points)
-Implement an enum of flavors for the soda fountain.  Possible flavors are: Cola, Orange, Vanilla, Chocolate, RootBeer, Cherry, and Lime.
+### SodasourusFlavor enum (10 points)
+Implement an enum of flavors for the tea fountain.  Possible flavors are: Cola, Orange, Vanilla, Chocolate, RootBeer, Cherry, and Lime.
 
-### Sodasaurus Class (10 points)
-Implement a class to represent a Sodasaurus that inherits from the Drink class.  It should have an additional property of **Flavor** with type SodasaurusFlavor.  The price of a Sodasaurus is **$1.50** (small), **$2.00** (medium), and **$2.50** (large).  Calories are **112** (small), **156** (medium), and **208** (large). Its ingredients should be "Water", "Natural Flavors", and "Cane Sugar."
+### Sodasourus Class (10 points)
+Implement a class to represent a Sodasourus that inherits from the Drink class.  It should have an additional property of **Flavor** with type SodasourusFlavor.  The price of a Sodasourus is **$1.50** (small), **$2.00** (medium), and **$2.50** (large).  Calories are **112** (small), **156** (medium), and **208** (large). Its ingredients should be "Water", "Natural Flavors", and "Cane Sugar."
 
 ### Tyrannotea Class (10 points)
 Implement a class to represent Tyrannotea that inherits from Drink.  It should have properties for **Sweet** (a bool, default false) and **Lemon** (a bool, default false).  Its price is **$0.99** (small), **$1.49** (medium), and **$1.99** (large).  Its calories are **8** (small), **16** (medium), and **32** (large).  Adding sweetener doubles these values.  It should also implement a method **AddLemon()** which sets the lemon to true.  Its ingredients should be "Water", "Tea", (if lemon was added) "Lemon", and (if sweet) "Cane Sugar".
@@ -47,7 +47,7 @@ Implement a class to represent the JurassicJava, that inherits from the Drink cl
 ### Water Class (5 points)
 Implement a class to represent a glass of water that inherits from the Drink base class.  It should have property **Lemon** (bool, default false), and a **AddLemon()** method.  The Water class should have a price of **$0.10** and **0** calories for all sizes.  Its ingredients should be "Water" and (if lemon was added) "Lemon".
 
-### SodaSaurus Test Class (10 points)
+### Sodasourus Test Class (10 points)
 Implement a test class that tests:
 1. The ability to set each possible flavor
 2. The correct default price, calories, ice, and size

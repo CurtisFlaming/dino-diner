@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Xunit;
-using DinoDiner.Menu.Entrees;
+using DinoDiner.Menu;
 
 namespace MenuTest.Entrees
 {
@@ -67,11 +67,11 @@ namespace MenuTest.Entrees
         {
             DinoNuggets dn = new DinoNuggets();
             dn.AddNugget();
-            Assert.Equal(dn.Price, 4.50, 2);
+            Assert.Equal(4.50, dn.Price, 2);
             dn.AddNugget();
-            Assert.Equal(dn.Price, 4.75, 2);
+            Assert.Equal(4.75, dn.Price, 2);
             dn.AddNugget();
-            Assert.Equal(dn.Price, 5.0, 2);
+            Assert.Equal(5.0, dn.Price, 2);
         }
 
         [Fact]
@@ -85,5 +85,62 @@ namespace MenuTest.Entrees
             dn.AddNugget();
             Assert.Equal<uint>(dn.Calories, 59*9);
         }
+
+        [Fact]
+        public void CorrectDescription()
+        {
+            DinoNuggets dn = new DinoNuggets();
+            Assert.Equal("Dino-Nuggets", dn.Description);
+        }
+
+        [Fact]
+        public void DefaultEmptySpecial()
+        {
+            DinoNuggets dn = new DinoNuggets();
+            Assert.Empty(dn.Special);
+        }
+
+        [Fact]
+        public void AddNuggetToSpecial()
+        {
+            DinoNuggets nuggets = new DinoNuggets();
+            nuggets.AddNugget();
+            Assert.Collection<string>(nuggets.Special,
+               item =>
+               {
+                   Assert.Equal((nuggets.extraNuggz + " Extra Nuggets"), item);
+               });
+        }
+
+        [Fact]
+        public void AddNuggetNotifySpecialChanged()
+        {
+            DinoNuggets nuggets = new DinoNuggets();
+            Assert.PropertyChanged(nuggets, "Special", () =>
+            {
+                nuggets.AddNugget();
+            });
+        }
+
+        [Fact]
+        public void AddNuggetNotifyPriceChanged()
+        {
+            DinoNuggets nuggets = new DinoNuggets();
+            Assert.PropertyChanged(nuggets, "Price", () =>
+            {
+                nuggets.AddNugget();
+            });
+        }
+
+        [Fact]
+        public void AddNuggetNotifyCaloriesChanged()
+        {
+            DinoNuggets nuggets = new DinoNuggets();
+            Assert.PropertyChanged(nuggets, "Calories", () =>
+            {
+                nuggets.AddNugget();
+            });
+        }
+
     }
 }

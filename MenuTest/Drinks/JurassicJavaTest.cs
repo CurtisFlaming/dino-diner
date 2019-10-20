@@ -95,5 +95,121 @@ namespace MenuTest.Drinks
             Assert.Equal<List<string>>(ingredz, java.Ingredients);
         }
 
+        [Fact]
+        public void CorrectDescription()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.Equal(java.Size + " Jurassic Java", java.Description);
+            java.Decaf = true;
+            Assert.Equal(java.Size + " Decaf Jurassic Java", java.Description);
+        }
+
+        //[Fact]
+        //public void CorrectDiscriptionAfterChange()
+        //{
+        //    JurassicJava java = new JurassicJava();
+
+        //}
+
+        [Fact]
+        public void DefaultEmptySpecial()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.Empty(java.Special);
+        }
+
+        [Fact]
+        public void AddIceToSpecial()
+        {
+            JurassicJava java = new JurassicJava();
+            java.AddIce();
+            Assert.Collection<string>(java.Special,
+                item =>
+                {
+                    Assert.Equal("Add Ice", item);
+                });
+        }
+
+        [Fact]
+        public void LeaveRoomForCreamToSpecial()
+        {
+            JurassicJava java = new JurassicJava();
+            java.LeaveRoomForCream();
+            Assert.Collection<string>(java.Special,
+                item =>
+                {
+                    Assert.Equal("Leave Space For Cream", item);
+                });
+        }
+
+        [Fact]
+        public void RoomForCreamAndAddIceToSpecial()
+        {
+            JurassicJava java = new JurassicJava();
+            java.LeaveRoomForCream();
+            java.AddIce();
+            Assert.Collection<string>(java.Special,
+                item =>
+                {
+                    Assert.Equal("Leave Space For Cream", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Add Ice", item);
+                });
+        }
+
+        [Fact]
+        public void AddIceAndRoomForCreamNotifySpecialChanged()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Special", () =>
+            {
+                java.AddIce();
+            });
+            Assert.PropertyChanged(java, "Special", () =>
+            {
+                java.LeaveRoomForCream();
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void NotifyPriceChange(Size size)
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Price", () =>
+            {
+                java.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void NotifyCaloriesChange(Size size)
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Calories", () =>
+            {
+                java.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void NotifySizeChange(Size size)
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Size", () =>
+            {
+                java.Size = size;
+            });
+        }
     }
 }

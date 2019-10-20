@@ -47,14 +47,29 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyOfPropertyChanged("Special");
         }
         public void HoldPeppers()
         {
             this.peppers = false;
+            NotifyOfPropertyChanged("Special");
         }
         public void HoldOnion()
         {
             this.onions = false;
+            NotifyOfPropertyChanged("Special");
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Whole Wheat Bun");
+                if (!onions) special.Add("Hold Onion");
+                if (!peppers) special.Add("Hold Peppers");
+                return special.ToArray();
+            }
         }
     }
 }

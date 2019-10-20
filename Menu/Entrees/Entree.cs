@@ -5,10 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public abstract class Entree : IMenuItem
+    public abstract class Entree : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Entree price
@@ -22,6 +23,26 @@ namespace DinoDiner.Menu
         /// Entree ingredients
         /// </summary>
         public virtual List<string> Ingredients { get; protected set; }
+        /// <summary>
+        /// item description
+        /// </summary>
+        public string Description => ToString();
+        /// <summary>
+        /// special attributes
+        /// </summary>
+        public virtual string[] Special { get; }
+        /// <summary>
+        /// property changed event
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// property changed handler
+        /// </summary>
+        /// <param name="property"></param>
+        protected void NotifyOfPropertyChanged(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
         /// <summary>
         /// splits camel case string
         /// </summary>
@@ -45,6 +66,11 @@ namespace DinoDiner.Menu
             }
             name = name.Substring(0, name.Length - 1);
             return ($"{name}");
+        }
+
+        public void NotifyChanges()
+        {
+            NotifyOfPropertyChanged("Special");
         }
     }
 }

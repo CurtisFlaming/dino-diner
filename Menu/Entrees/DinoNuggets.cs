@@ -15,7 +15,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Bools to represent if ingredients are included or not in objects of this class
         /// </summary>
-        private int extraNuggz = 0;
+        public int extraNuggz = 0;
 
         /// <summary>
         /// List to store ingredients of this object
@@ -48,6 +48,9 @@ namespace DinoDiner.Menu
             this.Price += .25;
             this.Calories += 59;
             extraNuggz ++;
+            NotifyChanges();
+            NotifyOfPropertyChanged("Price");
+            NotifyOfPropertyChanged("Calories");
         }
         /// <summary>
         /// to string
@@ -56,6 +59,18 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Dino-Nuggets";
+        }
+        /// <summary>
+        /// special attributes
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (extraNuggz > 0) special.Add($"{extraNuggz} Extra Nuggets");
+                return special.ToArray();
+            }
         }
     }
 }

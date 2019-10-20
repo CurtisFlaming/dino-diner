@@ -1,6 +1,5 @@
 ﻿using Xunit;
 using DinoDiner.Menu;
-using DinoDiner.Menu;
 
 namespace MenuTest.Sides
 {
@@ -83,6 +82,59 @@ namespace MenuTest.Sides
             MezzorellaSticks ms = new MezzorellaSticks();
             ms.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, ms.Size);
+        }
+
+        [Fact]
+        public void CorrectDescripiton()
+        {
+            MezzorellaSticks ms = new MezzorellaSticks();
+            Assert.Equal((ms.Size + " Mezzorella Sticks"), ms.Description);
+        }
+
+        [Fact]
+        public void DefaultEmptySpecial()
+        {
+            MezzorellaSticks ms = new MezzorellaSticks();
+            Assert.Empty(ms.Special);
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeShouldNotifySizeChanged(Size size)
+        {
+            MezzorellaSticks ms = new MezzorellaSticks();
+            Assert.PropertyChanged(ms, "Size", () =>
+            {
+                ms.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeShouldNotifyPriceChanged(Size size)
+        {
+            MezzorellaSticks ms = new MezzorellaSticks();
+            Assert.PropertyChanged(ms, "Price", () =>
+            {
+                ms.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeShouldNotifyCaloriesChanged(Size size)
+        {
+            MezzorellaSticks ms = new MezzorellaSticks();
+            Assert.PropertyChanged(ms, "Calories", () =>
+            {
+                ms.Size = size;
+            });
         }
     }
 }

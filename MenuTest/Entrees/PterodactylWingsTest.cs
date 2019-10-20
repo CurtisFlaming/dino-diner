@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Xunit;
-using DinoDiner.Menu.Entrees;
+using DinoDiner.Menu;
 
 namespace MenuTest.Entrees
 {
@@ -30,5 +30,18 @@ namespace MenuTest.Entrees
             Assert.Equal<int>(2, ingredients.Count);
         }
 
+        [Fact]
+        public void CorrectDescription()
+        {
+            PterodactylWings wings = new PterodactylWings();
+            Assert.Equal("Pterodactyl Wings", wings.Description);
+        }
+
+        [Fact]
+        public void DefaultEmptySpecial()
+        {
+            PterodactylWings wings = new PterodactylWings();
+            Assert.Empty(wings.Special);
+        }
     }
 }

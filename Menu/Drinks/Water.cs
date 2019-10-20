@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -19,7 +20,20 @@ namespace DinoDiner.Menu
         /// <summary>
         /// water size
         /// </summary>
-        public override Size Size { get; set; }
+        private Size size;
+        public override Size Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
+                NotifyOfPropertyChanged("Size");
+            }
+        }
+
         /// <summary>
         /// water ingredients
         /// </summary>
@@ -30,6 +44,19 @@ namespace DinoDiner.Menu
                 List<string> ingredients = new List<string>() { "Water" };
                 if (Lemon) ingredients.Add("Lemon");
                 return ingredients;
+            }
+        }
+        /// <summary>
+        /// item special attributes
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (Lemon) special.Add("Add Lemon");
+                return special.ToArray();
             }
         }
         /// <summary>
@@ -46,6 +73,7 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            NotifyOfPropertyChanged("Special");
         }
     }
 }

@@ -31,11 +31,25 @@ namespace DinoDiner.Menu
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Flour Tortilla", "Chicken Breast"};
+                List<string> ingredients = new List<string>() { "Flour Tortilla", "Chicken Breast" };
                 if (dressing) ingredients.Add("Ceasar Dressing");
                 if (lettuce) ingredients.Add("Romaine Lettuce");
                 if (cheese) ingredients.Add("Parmesan Cheese");
                 return ingredients;
+            }
+        }
+        /// <summary>
+        /// item special attributes
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!lettuce) special.Add("Hold Romaine Lettuce");
+                if (!dressing) special.Add("Hold Ceasar Dressing");
+                if (!cheese) special.Add("Hold Parmesan Cheese");
+                return special.ToArray();
             }
         }
         /// <summary>
@@ -52,14 +66,17 @@ namespace DinoDiner.Menu
         public void HoldDressing()
         {
             this.dressing = false;
+            NotifyChanges();
         }
         public void HoldLettuce()
         {
             this.lettuce = false;
+            NotifyChanges();
         }
         public void HoldCheese()
         {
             this.cheese = false;
+            NotifyChanges();
         }
         /// <summary>
         /// to string

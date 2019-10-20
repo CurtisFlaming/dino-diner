@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
 using Xunit;
-using DinoDiner.Menu;
 
 namespace MenuTest.Drinks
 {
@@ -80,8 +79,94 @@ namespace MenuTest.Drinks
             Water water = new Water();
             water.AddLemon();
             Assert.True(water.Lemon);
-                 
+        }
 
+        [Fact]
+        public void CorrectDescription()
+        {
+            Water water = new Water();
+            Assert.Equal((water.Size + " Water"), water.Description);
+        }
+
+        [Fact]
+        public void DefaultEmptySpecial()
+        {
+            Water water = new Water();
+            Assert.Empty(water.Special);
+        }
+
+        [Fact]
+        public void HoldIceToSpecial()
+        {
+            Water water = new Water();
+            water.HoldIce();
+            Assert.Collection<string>(water.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Ice", item);
+                });
+        }
+
+        [Fact]
+        public void AddeLemonToSpecial()
+        {
+            Water water = new Water();
+            water.AddLemon();
+            Assert.Collection<string>(water.Special,
+                item =>
+                {
+                    Assert.Equal("Add Lemon", item);
+                });
+        }
+
+        [Fact]
+        public void AddLemonAndIceToSpecial()
+        {
+            Water water = new Water();
+            water.HoldIce();
+            water.AddLemon();
+            Assert.Collection<string>(water.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Ice", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Add Lemon", item);
+                });
+        }
+
+        [Fact]
+        public void AddLemonNotifySpecialChanged()
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Special", () =>
+            {
+                water.AddLemon();
+            });
+        }
+
+        [Fact]
+        public void AddIceNotifySpecialChanged()
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Special", () =>
+            {
+                water.HoldIce();
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void NotifySizeChange(Size size)
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Size", () =>
+            {
+                water.Size = size;
+            });
         }
     }
 }

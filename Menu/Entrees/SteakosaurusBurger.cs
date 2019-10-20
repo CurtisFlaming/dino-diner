@@ -36,6 +36,21 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
+        /// item special attributes
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Whole Wheat Bun");
+                if (!ketchup) special.Add("Hold Ketchup");
+                if (!mustard) special.Add("Hold Mustard");
+                if (!pickle) special.Add("Hold Pickle");
+                return special.ToArray();
+            }
+        }
+        /// <summary>
         /// Constructor for this class. 
         /// </summary>
         public SteakosaurusBurger()
@@ -49,18 +64,22 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyChanges();
         }
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyChanges();
         }
         public void HoldKetchup()
         {
             this.ketchup = false;
+            NotifyChanges();
         }
         public void HoldMustard()
         {
             this.mustard = false;
+            NotifyChanges();
         }
     }
 }

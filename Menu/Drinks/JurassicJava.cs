@@ -56,16 +56,29 @@ namespace DinoDiner.Menu
                     case (Size.Small):
                         this.Price = .59;
                         this.Calories = 2;
+                        NotifyChanges();
                         break;
                     case (Size.Medium):
                         this.Price = .99;
                         this.Calories = 4;
+                        NotifyChanges();
                         break;
                     case (Size.Large):
                         this.Price = 1.49;
                         this.Calories = 8;
+                        NotifyChanges();
                         break;
                 }
+            }
+        }
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (RoomForCream) special.Add("Leave Space For Cream");
+                if (Ice) special.Add("Add Ice");
+                return special.ToArray();
             }
         }
         /// <summary>
@@ -74,6 +87,7 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// method sets ice true
@@ -81,6 +95,7 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             Ice = true;
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// to string

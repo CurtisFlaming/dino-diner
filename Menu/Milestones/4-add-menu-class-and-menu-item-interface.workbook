@@ -36,7 +36,7 @@ You will also need to refactor all menu items by overriding the `ToString()` met
 
 In most cases, the name of the menu item is the class name with spaces added; however, some are a bit different, i.e. "Prehistoric PB&J" and "T-Rex King Burger".  
 
-Additionally, Sides and Drinks should indicate thier size, i.e. "Large Triceritots", "Small Meteor Mac and Cheese", "Medium Water".  Sodasaurus should also indicate flavor, i.e. "Large Cherry Sodasaurus", and JurrasicJava and Tyrannotea should include "Decaf" and "Sweet" when they apply.
+Additionally, Sides and Drinks should indicate thier size, i.e. "Large Triceritots", "Small Meteor Mac and Cheese", "Medium Water".  Sodasourus should also indicate flavor, i.e. "Large Cherry Sodasourus", and JurrasicJava and Tyrannotea should include "Decaf" and "Sweet" when they apply.
 
 The full specification for names can be found in the upstream MenuItemNameTest.cs file.  Your project should pass all the tests contained there.
 

@@ -23,6 +23,13 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
+        public override string[] Special
+        {
+            get
+            {
+                return new string[0];
+            }
+        }
 
         /// <summary>
         /// Size of side order
@@ -52,7 +59,7 @@ namespace DinoDiner.Menu
                         Calories = 540;
                         break;
                 }
-
+                NotifyChanges();
             }
         }
 

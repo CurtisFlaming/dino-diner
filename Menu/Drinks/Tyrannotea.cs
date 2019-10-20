@@ -42,14 +42,17 @@ namespace DinoDiner.Menu
                     case (Size.Small):
                         this.Price = .99;
                         this.Calories = 8 * sweetFactor;
+                        NotifyChanges();
                         break;
                     case (Size.Medium):
                         this.Price = 1.49;
                         this.Calories = 16 * sweetFactor;
+                        NotifyChanges();
                         break;
                     case (Size.Large):
                         this.Price = 1.99;
                         this.Calories = 32 * sweetFactor;
+                        NotifyChanges();
                         break;
                 }
             }
@@ -68,6 +71,20 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
+        /// item special attributes
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (Lemon) special.Add("Add Lemon");
+                return special.ToArray();
+            }
+        }
+
+        /// <summary>
         /// constructor sets default size to small
         /// </summary>
         public Tyrannotea()
@@ -80,6 +97,7 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// method to add sweetener
@@ -103,18 +121,8 @@ namespace DinoDiner.Menu
         /// <returns>string</returns>
         public override string ToString()
         {
-            string name = "";
-            string[] tempArray = SplitCamelCase(this.GetType().Name);
-            foreach (string s in tempArray)
-            {
-                name += s + " ";
-            }
-            name = name.Substring(0, name.Length - 1);
-            if (Sweet)
-            {
-                return ($"{Size} Sweet {name}");
-            }
-            return ($"{Size} {name}");
+            if (Sweet) return Size + " Sweet Tyrannotea";
+            return Size + " Tyrannotea";
         }
     }
 }

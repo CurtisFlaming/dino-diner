@@ -43,6 +43,24 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Whole Wheat Bun");
+                if (!pickle)special.Add("Hold Pickle");
+                if (!ketchup)special.Add("Hold Ketchup");
+                if (!mustard) special.Add("Hold Mustard");
+                if (!mayo) special.Add("Hold Mayo");
+                if (!onion) special.Add("Hold Onion");
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!tomato) special.Add("Hold Tomato");
+                return special.ToArray();
+            }
+        }
+
         /// <summary>
         /// Constructor for this class. 
         /// </summary>
@@ -57,34 +75,42 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyChanges();
         }
         public void HoldLettuce()
         {
             this.lettuce = false;
+            NotifyChanges();
         }
         public void HoldTomato()
         {
             this.tomato = false;
+            NotifyChanges();
         }
         public void HoldOnion()
         {
             this.onion = false;
+            NotifyChanges();
         }
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyChanges();
         }
         public void HoldKetchup()
         {
             this.ketchup = false;
+            NotifyChanges();
         }
         public void HoldMustard()
         {
             this.mustard = false;
+            NotifyChanges();
         }
         public void HoldMayo()
         {
             this.mayo = false;
+            NotifyChanges();
         }
         /// <summary>
         /// to string

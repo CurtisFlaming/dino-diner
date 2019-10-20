@@ -25,6 +25,13 @@ namespace DinoDiner.Menu
             }
         }
 
+        public override string[] Special
+        {
+            get
+            {
+                return new string[0];
+            }
+        }
         /// <summary>
         /// Size of side. Sets price and calories
         /// </summary>
@@ -43,20 +50,23 @@ namespace DinoDiner.Menu
                     case Size.Large:
                         Price = 1.95;
                         Calories = 480;
+                        NotifyChanges();
                         break;
                     case Size.Medium:
                         Price = 1.45;
                         Calories = 365;
+                        NotifyChanges();
                         break;
                     case Size.Small:
                         Price = .99;
                         Calories = 222;
+                        NotifyChanges();
                         break;
                 }
                 
             }
         } 
-
+        
         public Fryceritops()
         {
             this.Size = Size.Small;

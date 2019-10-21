@@ -13,7 +13,7 @@
             <TextBlock HorizontalAlignment="Center">
                 Side
             </TextBlock>
-            <Button Height="100" Width="120">
+            <Button Name="BtnAddFryceritops" Click="AddFryceritopsClick" Height="100" Width="120">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-08.png"/>
                 </Button.Background>
@@ -46,7 +46,7 @@
                 </DockPanel>
             </Button>
         </StackPanel>
-        <RadioButton Content="Small" HorizontalAlignment="Left" Margin="295,108,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="BtnSmall" Click="SmallClick" Content="Small" HorizontalAlignment="Left" Margin="295,108,0,0" VerticalAlignment="Top"/>
         <RadioButton Content="Medium" HorizontalAlignment="Left" Margin="295,157,0,0" VerticalAlignment="Top"/>
         <RadioButton Content="Large" HorizontalAlignment="Left" Margin="295,209,0,0" VerticalAlignment="Top"/>
     </Grid>

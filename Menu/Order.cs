@@ -9,6 +9,11 @@ namespace DinoDiner.Menu
 {
     public class Order
     {
+        public Order() { }
+       /// <summary>
+       /// constructor used to set taxrate for tests
+       /// </summary>
+       /// <param name="taxrate"></param>
         public Order(double taxrate)
         {
             this.SalesTaxRate = taxrate;

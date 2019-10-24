@@ -23,35 +23,44 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-            Order order = (Order)DataContext;
-            Tyrannotea tea = new Tyrannotea();
-            tea.AddLemon();
-            tea.AddSweetener();
-            tea.Size = DinoDiner.Menu.Size.Large;
-            order.Items.Add(tea);
-            order.Items.Add(new Tyrannotea());
-        }
+        //public MainWindow()
+        //{
+        //    InitializeComponent();
+        //    Order order = (Order)DataContext;
+        //    Tyrannotea tea = new Tyrannotea();
+        //    tea.AddLemon();
+        //    tea.AddSweetener();
+        //    tea.Size = DinoDiner.Menu.Size.Large;
+        //    order.Items.Add(tea);
+        //    order.Items.Add(new Tyrannotea());
+        //}
 
         public void OnLoadComplete(object sender, NavigationEventArgs e)
         {
-            SetFrameDataContext();
+            BindDataContextToPage();
         }
-        
+
         public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            SetFrameDataContext();
+            BindDataContextToPage();
         }
 
-        private void SetFrameDataContext()
+        //private void SetFrameDataContext()
+        //{
+        //    FrameworkElement content = OrderInterface.Content as FrameworkElement;
+        //    if (content == null) return;
+        //    content.DataContext = OrderInterface.DataContext;
+        //}
+
+
+
+        private void BindDataContextToPage()
         {
-            FrameworkElement content = OrderInterface.Content as FrameworkElement;
-            if (content == null) return;
-            content.DataContext = OrderInterface.DataContext;
+            if(OrderUI.Content is FrameworkElement element)
+            {
+                element.DataContext = OrderUI.DataContext;
+            }
         }
-
 
     }
 }

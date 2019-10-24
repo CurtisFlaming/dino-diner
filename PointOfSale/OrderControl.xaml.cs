@@ -20,9 +20,23 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+
+        public NavigationService navService {get; set;}
+
+
         public OrderControl()
         {
             InitializeComponent();
+        }
+
+
+
+        private void OnSelectionChanged(object sender, SelectedCellsChangedEventArgs args)
+        {
+            if(OrderItems.SelectedItem is Side)
+            {
+                navService?.Navigate(new SideSelection());
+            }
         }
     }
 }

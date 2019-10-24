@@ -46,8 +46,16 @@
                 </DockPanel>
             </Button>
         </StackPanel>
-        <RadioButton Name="BtnSmall" Click="SmallClick" Content="Small" HorizontalAlignment="Left" Margin="295,108,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="BtnSmall" Click="OnSelectSmall" Content="Small" HorizontalAlignment="Left" Margin="295,108,0,0" VerticalAlignment="Top"/>
         <RadioButton Content="Medium" HorizontalAlignment="Left" Margin="295,157,0,0" VerticalAlignment="Top"/>
         <RadioButton Content="Large" HorizontalAlignment="Left" Margin="295,209,0,0" VerticalAlignment="Top"/>
+
+        <ContentControl Content="{Binding Path=Items}">
+            
+        </ContentControl>
+        
+        <ContentControl Content="{Binding}">
+            <ContentControl.
+        </ContentControl>
     </Grid>
 </Page>

@@ -28,19 +28,40 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        public void SmallClick(object sender, ExecutedRoutedEventArgs e)
+        private void SelectSide(Side side)
         {
-
+            if (DataContext is Order order)
+            {
+                order.Items.Add(new Fryceritops());
+                this.Side = side;
+            }
         }
 
-        public void AddFryceritopsClick(object sender, ExecutedRoutedEventArgs e)
+        private void SelectSize(DinoDiner.Menu.Size size)
         {
-            OrderControl order = (Order)DataContext;
-            order.Items.Add(new Fryceritops());
-            BtnAddFryceritops.IsEnabled = false;
-            //...
-            BtnSmall.IsEnabled = true;
-            //...
+            this.Side.Size = size;
         }
+
+        protected void OnSelectLarge()
+        {
+            SelectSize(DinoDiner.Menu.Size.Large);
+        }
+        protected void OnSelectMedium()
+        {
+            SelectSize(DinoDiner.Menu.Size.Medium);
+        }
+        protected void OnSelectSmall()
+        {
+            SelectSize(DinoDiner.Menu.Size.Small);
+        }
+
+        public void AddFryceritopsClick(object sender, RoutedEventArgs e)
+        {
+            SelectSide(new Fryceritops());
+        }
+
+
+        
+        
     }
 }
